@@ -1,0 +1,10 @@
+SQL injection = product category filter 
+
+
+SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+
+
+End Goal : Display al products both released and unreleased .
+
+Analysis: 
+SELECT * FROM WHERE category = 'Pets' AND released = 1 
